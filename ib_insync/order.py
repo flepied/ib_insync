@@ -62,3 +62,9 @@ class StopLimitOrder(Order):
                 totalQuantity=totalQuantity, lmtPrice=lmtPrice,
                 auxPrice=stopPrice, **kwargs)
 
+
+class MarketOnCloseOrder(Order):
+    __slots__ = ()
+    def __init__(self, action, totalQuantity, **kwargs):
+        Order.__init__(self, orderType='MOC', action=action,
+                totalQuantity=totalQuantity, **kwargs)
